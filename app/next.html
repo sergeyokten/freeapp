@@ -5,9 +5,41 @@
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="main.css">
         <title>Document</title>
+
     </head>
-    <body>
-asdsadsadadasdsad
+    <body id="nextBody">
+
+        <div class="inputs">
+            <input id="name" class="inputTextStyle" placeholder="product name">
+            <input type="number" id="count" class="inputTextStyle" placeholder="product pcs">
+            <br>
+            <!--<label for="photo" class="label">-->
+            <!--choose photo-->
+            <!--</label>-->
+            <select id="photo">
+                <option value="https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,q_auto,w_640/v1/hellofresh_s3/image/55b9a2ec4dab7184418b4567.png">
+                potato
+                </option>
+                <option value="https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=4.0.64">
+                tomato
+                </option>
+            </select>
+            <br>
+            <button id="save" class="saveButtonStyle">save</button>
+        </div>
+
+        <div class="inputs">
+            <input id="title" class="inputTextStyle" placeholder="photo title">
+            <input id="imageURL" class="inputTextStyle" placeholder="photo url">
+            <br>
+            <button id="addProductPhoto" class="saveButtonStyle">addProductPhoto</button>
+        </div>
+
+
+        <div class="backButton" id="backButton">&#x2190;</div>
+
+
     </body>
 </html>
