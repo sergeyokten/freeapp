@@ -1,0 +1,15 @@
+
+body {
+    margin: 0;
+    background: silver;
+}
+
+.target {
+    width: 200px;
+    height: 200px;
+    background: #000;
+    position: fixed;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+
+}

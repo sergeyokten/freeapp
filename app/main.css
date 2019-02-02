@@ -1,0 +1,88 @@
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    background: #e3e4e6;
+    height: 100%;
+    width: 100%;
+}
+
+.picture {
+    width: 30%;
+    height: 100px;
+    background: url("https://cdn3.volusion.com/ph9xz.o9ecs/v/vspfiles/photos/TF-0272-2.jpg?1434104463");
+    background-size: cover;
+    border-radius: 5px;
+}
+
+.element {
+    width: 95%;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px auto 0;
+}
+
+.details {
+    width: 45%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+
+.name {
+    background: white;
+    height: 48%;
+    border-radius: 5px;
+
+}
+
+.count {
+    background: white;
+    height: 48%;
+    border-radius: 5px;
+
+}
+
+.buy {
+    width: 20%;
+    height: 100px;
+    background: #9ad5ff;
+    border-radius: 5px;
+}
+
+.buy > div {
+    font-size: 3em;
+    color: #0f75b1;
+}
+
+.content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.wrap {
+    width: 100%;
+}
+
+.addButton {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 70px;
+    height: 70px;
+    background: #62bd50;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+}

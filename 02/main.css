@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    /*background: silver;*/
+}
+
+html, body {
+    height: 100%
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    background-size: 100% 100%;
+}
+
+.target1 {
+    background-image: url("images/25110433.webp");
+    position: relative;
+    /*z-index: 1;*/
+}
+
+.target2 {
+    background-image: url("images/25109966.webp");
+    position: relative;
+    /*position: absolute;*/
+    /*z-index: 0;*/
+    /*left: 500px;*/
+}
+
+.target3 {
+    background-image: url("images/actec.jpeg");
+    position: relative;
+    /*position: absolute;*/
+    /*z-index: 0;*/
+}
+
+

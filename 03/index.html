@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="style.css">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <!--<div class="target"></div>-->
+
+        <script>
+
+            // string
+            // number 132 3.54465
+            // boolean - true/false
+            // {name : 'vasya',age : 31}
+            // [200,200,200,500,500,5005,500]
+
+
+            let a = 'hello oktenweb';
+            let b = 100;
+            let c = true;
+            c = 5 > 6;
+            // > < >= <= == != === !==
+            console.log(a);
+            console.log(b);
+            console.log(c);
+
+            let mentor = {
+                name: 'Sergii',
+                surname: "Zhuravlov",
+                age: 31,
+                skills: []
+            };
+
+            // console.log(mentor.name);
+            // // console.log(mentor.userIngo);
+            // let userInfo = prompt();
+            // console.log(userInfo);
+            // console.log(mentor[userInfo]);
+
+            let skills = ['html', 'css', 'js', 'java', 'angular', 'spring', 'node.js', 'vue.js', 'spring', 'hibernate'];
+            console.log(skills[2]);
+            console.log(skills[6]);
+
+            let skillsObj = {
+                0: 'html',
+                1: 'css'
+            };
+
+            console.log(skillsObj[0]);
+
+
+            let lastIndex = skills.length - 2;
+            console.log(skills.length);
+            console.log(skills[skills.length - 1]);
+
+            console.log(skills[1090]);
+            let x; // =?
+            console.log(x);
+            console.log(NaN);
+            let obj = null;
+            console.log(obj);
+            //true = 1 , false = 0
+            console.log(10 + true + true);
+            console.log([] / '');
+            console.log(10 / 0);
+
+            let users = [
+                {name: 'vasya', status: true},
+                {name: 'petya', status: false},
+                {name: 'olya', status: false},
+                {name: 'potato', status: true},
+                {name: 'potato', status: false},
+                {name: 'potato', status: true},
+            ];
+
+
+            // for (let i = users.length / 2; i < users.length - 1; i++) {
+            //     console.log(users[i]);
+            // }
+
+            console.log('------------');
+            for (let temp of users) {
+
+                if (temp.status || temp.name == 'vasya') {
+                    console.log(temp);
+                }
+            }
+
+            // let users = [
+            //     {name: 'vasya', age: 31, status: false},
+            //     {name: 'petya', age: 30, status: true},
+            //     {name: 'kolya', age: 29, status: true},
+            //     {name: 'olya', age: 28, status: false},
+            //     {name: 'max', age: 30, status: true},
+            //     {name: 'anya', age: 31, status: false},
+            //     {name: 'oleg', age: 28, status: false},
+            //     {name: 'andrey', age: 29, status: true},
+            //     {name: 'masha', age: 30, status: true},
+            //     {name: 'olya', age: 31, status: false},
+            //     {name: 'max', age: 31, status: true}
+            // ];
+
+
+            let result = 5 == 5; //true
+            let result = '5' == '5'; //true
+            let result = '5' === 5; //false
+
+
+
+
+
+        </script>
+    </body>
+</html>
