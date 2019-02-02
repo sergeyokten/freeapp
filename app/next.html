@@ -12,34 +12,168 @@
     <body id="nextBody">
 
         <div class="inputs">
+
+
             <input id="name" class="inputTextStyle" placeholder="product name">
             <input type="number" id="count" class="inputTextStyle" placeholder="product pcs">
             <br>
-            <!--<label for="photo" class="label">-->
-            <!--choose photo-->
-            <!--</label>-->
             <select id="photo">
                 <option value="https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,q_auto,w_640/v1/hellofresh_s3/image/55b9a2ec4dab7184418b4567.png">
-                potato
+                    potato
                 </option>
-                <option value="https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=4.0.64">
-                tomato
+                <option selected
+                        value="https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=4.0.64">
+                    tomato
                 </option>
             </select>
             <br>
             <button id="save" class="saveButtonStyle">save</button>
         </div>
 
-        <div class="inputs">
-            <input id="title" class="inputTextStyle" placeholder="photo title">
-            <input id="imageURL" class="inputTextStyle" placeholder="photo url">
-            <br>
-            <button id="addProductPhoto" class="saveButtonStyle">addProductPhoto</button>
-        </div>
+        <!--<div class="inputs">-->
+        <!--<input id="title" class="inputTextStyle" placeholder="photo title">-->
+        <!--<input id="imageURL" class="inputTextStyle" placeholder="photo url">-->
+        <!--<br>-->
+        <!--<button id="addProductPhoto" class="saveButtonStyle">addProductPhoto</button>-->
+        <!--</div>-->
 
 
         <div class="backButton" id="backButton">&#x2190;</div>
 
 
+        <script>
+
+            // document.getElementById('backButton').onclick = function () {
+            //     location.href = 'index.html';
+            // };
+            //
+            //
+            // let save = document.getElementById('save');
+            //
+            // let name = document.getElementById('name');
+            // let count = document.getElementById('count');
+            // let photo = document.getElementById('photo');
+            //
+            // let productsArray = [];
+            // save.onclick = function () {
+            //     let countValue = count.value;
+            //     let photoValue = photo.value;
+            //     let nameValue = name.value;
+            //
+            //     let d = new Date();
+            //
+            //     let product = {
+            //         id: '' + d.getFullYear() + d.getMonth() + d.getDay() + d.getHours() + d.getMinutes() + d.getSeconds() + d.getMilliseconds(),
+            //         name: nameValue,
+            //         count: countValue,
+            //         photo: photoValue
+            //
+            //     };
+            //
+            //     let productsFromStorage = localStorage.getItem('products');
+            //     console.log(productsFromStorage);
+            //     if (productsFromStorage) {
+            //         let parseArrayOfProducts = JSON.parse(productsFromStorage);
+            //         parseArrayOfProducts.push(product);
+            //         localStorage.setItem('products', JSON.stringify(parseArrayOfProducts));
+            //
+            //     } else {
+            //         console.log('ELSE');
+            //         let arr = [];
+            //         arr.push(product);
+            //         localStorage.setItem('products', JSON.stringify(arr))
+            //
+            //     }
+            //
+            //     console.log(productsFromStorage);
+            //
+            //
+            // };
+
+            /*12*/
+
+            // let save = document.getElementById('save');
+            //
+            // let name = document.getElementById('name');
+            // let count = document.getElementById('count');
+            // let photo = document.getElementById('photo');
+            //
+            //
+            // save.onclick = function () {
+            //     console.log('do');
+            //
+            //     console.log(name.value);
+            //     console.log(count.value);
+            //     console.log(photo.value);
+            //
+            //     let d = new Date();
+            //     let product = {
+            //         id: '' + d.getFullYear() + d.getMonth() + d.getDay() + d.getHours() + d.getMinutes() + d.getSeconds() + d.getMilliseconds(),
+            //         name: name.value,
+            //         count: count.value,
+            //         photo: photo.value
+            //     };
+            //
+            //
+            //     let products = localStorage.getItem('products');
+            //     if (products) {
+            //         console.log(products);
+            //         let parsedProducts = JSON.parse(products); // '[]'-> []
+            //         parsedProducts.push(product);
+            //         localStorage.setItem('products', JSON.stringify(parsedProducts));
+            //         console.log('if');
+            //
+            //     } else {
+            //         console.log(';else');
+            //         let arr = [];
+            //         arr.push(product);
+            //         localStorage.setItem('products', JSON.stringify(arr));
+            //
+            //
+            //     }
+            // }
+            /*14*/
+
+
+            document.getElementById('save').onclick = function () {
+                let name = document.getElementById('name').value;
+                let count = document.getElementById('count').value;
+                let photo = document.getElementById('photo').value;
+                console.log(name);
+                console.log(count);
+                console.log(photo);
+
+                let d = new Date();
+                let product = {
+                    id: '' + d.getFullYear() + d.getMonth() + d.getDay() + d.getHours() + d.getMinutes() + d.getSeconds() + d.getMilliseconds(),
+                    name: name,
+                    count: count,
+                    photo: photo
+
+                };
+                console.log(product);
+
+                let products = localStorage.getItem('products');
+
+                if (products) {
+                    console.log('if');
+
+                    let parsedProducts = JSON.parse(products);
+                    parsedProducts.push(product);
+                    let json = JSON.stringify(parsedProducts);
+                    localStorage.setItem('products', json);
+
+                } else {
+                    console.log('else');
+
+                    let arr = [];
+                    arr.push(product);
+                    localStorage.setItem('products', JSON.stringify(arr));
+                }
+
+            };
+
+
+        </script>
     </body>
 </html>

@@ -11,44 +11,23 @@
     </head>
     <body>
 
+        <div class="element template ">
+            <div class="picture" id="picture"></div>
+            <div class="details">
+                <div class="name content-center">
+                    <div id="name">tomato</div>
+                </div>
+                <div class="count content-center">
+                    <div id="count">2</div>
+                </div>
+            </div>
+            <div class="buy content-center">
+                <div>&#10003;</div>
+            </div>
+        </div>
+
         <div class="wrap">
             <div class="list">
-                <div class="element">
-                    <div class="picture"></div>
-                    <div class="details">
-                        <div class="name content-center">
-                            <div>tomato</div>
-                        </div>
-                        <div class="count content-center">
-                            <div>2</div>
-                        </div>
-
-                    </div>
-                    <div class="buy content-center">
-                        <div>&#10003;</div>
-                    </div>
-
-
-                </div>
-                <div class="element">
-                    <div class="picture"></div>
-                    <div class="details">
-                        <div class="name content-center">
-                            <div>tomato</div>
-                        </div>
-                        <div class="count content-center">
-                            <div>2</div>
-                        </div>
-
-                    </div>
-                    <div class="buy content-center">
-                        <div>&#10003;</div>
-                    </div>
-
-
-                </div>
-
-
             </div>
 
         </div>
@@ -60,6 +39,107 @@
             let addButton = document.getElementsByClassName('addButton')[0];
             addButton.onclick = function () {
                 location.href = 'next.html';
+            };
+
+
+            // let products = localStorage.getItem('products');
+            // let parsedProducts = JSON.parse(products);
+            //
+            //
+            // if (products) {
+            //     console.log(parsedProducts);
+            //
+            //     for (const product of parsedProducts) {
+            //         console.log(product);
+            //
+            //         // call to template
+            //         let template = document.getElementsByClassName('template')[0];
+            //         // fill info
+            //         let name = document.getElementById('name');
+            //         name.innerText = product.name;
+            //         let count = document.getElementById('count');
+            //         count.innerText = product.count;
+            //         let picture = document.getElementById('picture');
+            //         picture.style.backgroundImage = `url(${product.photo})`;
+            //
+            //         let clone = template.cloneNode(true);
+            //         clone.classList.remove('template');
+            //         clone.setAttribute('data-id', product.id);
+            //
+            //         // add to list
+            //         document.getElementsByClassName('list')[0].appendChild(clone);
+            //
+            //     }
+            //
+            // }
+            /**/
+            //
+            // let products = localStorage.getItem('products');
+            // if (products) {
+            //     let parseProducts = JSON.parse(products);
+            //     console.log(parseProducts);
+            //
+            //     let template = document.getElementsByClassName('template')[0];
+            //     let picture = document.getElementById('picture');
+            //     let name = document.getElementById('name');
+            //     let count = document.getElementById('count');
+            //     let list = document.getElementsByClassName('list')[0];
+            //
+            //     for (const product of parseProducts) {
+            //         picture.style.backgroundImage = `url(${product.photo})`;
+            //         name.innerText = product.name;
+            //         count.innerText = product.count;
+            //         let cloneNode = template.cloneNode(true);
+            //         cloneNode.classList.remove('template');
+            //         cloneNode.setAttribute('id', product.id);
+            //         list.appendChild(cloneNode);
+            //     }
+            //
+            //
+            // } else {
+            //     //todo asdasdas
+            // }
+            //
+            //
+            // let buyButtons = document.getElementsByClassName('buy');
+            // for (const buyButton of buyButtons) {
+            //     buyButton.onclick = function () {
+            //         let id = this.parentNode.getAttribute('id');
+            //         console.log(id);
+            //         this.parentNode.remove();
+            //
+            //     }
+            // }
+
+            /*14*/
+            let products = localStorage.getItem('products');
+            let parsedProducts = JSON.parse(products);
+            console.log(parsedProducts);
+
+            for (const prod of parsedProducts) {
+                //1 get template
+                let template = document.getElementsByClassName('template')[0];
+                //2 fill info
+                document.getElementById('name').innerText = prod.name;
+                document.getElementById('count').innerText = prod.count;
+                document.getElementById('picture').style.backgroundImage = `url(${prod.photo})`;
+                //3 copy template
+                let cloneNode = template.cloneNode(true);
+                cloneNode.classList.remove('template');
+                cloneNode.setAttribute('data-id', prod.id);
+
+                // add to list
+
+                let list = document.getElementsByClassName('list')[0];
+                list.appendChild(cloneNode);
+            }
+
+
+            let buyButtons = document.getElementsByClassName('buy');
+            for (const currentButton of buyButtons) {
+                currentButton.onclick = function () {
+                    currentButton.parentElement.remove();
+                }
             }
 
         </script>

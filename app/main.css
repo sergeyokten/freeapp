@@ -86,3 +86,77 @@ body {
     color: #fff;
     font-size: 20px;
 }
+
+/*next page styles*/
+
+.inputs {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 60%;
+}
+
+.inputTextStyle {
+    /*-webkit-appearance: none;*/
+    width: 100%;
+    border: 0;
+    height: 48px;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 2px solid #C8CCD4;
+    background: none;
+    border-radius: 0;
+    color: #223254;
+    font-family: Avenir, serif;
+}
+
+.inputTextStyle:focus, .inputTextStyle:focus {
+    background: none;
+    outline: none;
+}
+
+#nextBody {
+
+    display: flex;
+    /*justify-content: center;*/
+    align-items: center;
+    flex-direction: column;
+}
+
+.saveButtonStyle {
+    border: 2px solid #0f75b1;
+    color: #0f75b1;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+select {
+    display: block;
+    height: 30px;
+    border: 2px solid gray;
+    border-radius: 8px;
+    text-align-last: center;
+}
+
+.backButton {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 70px;
+    height: 70px;
+    background: #62bd50;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+
+}
+
+.template {
+    display: none;
+}
