@@ -18,24 +18,17 @@
             <input type="number" id="count" class="inputTextStyle" placeholder="product pcs">
             <br>
             <select id="photo">
-                <option value="https://res.cloudinary.com/hellofresh/image/upload/f_auto,fl_lossy,q_auto,w_640/v1/hellofresh_s3/image/55b9a2ec4dab7184418b4567.png">
-                    potato
-                </option>
-                <option selected
-                        value="https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=4.0.64">
-                    tomato
-                </option>
             </select>
             <br>
             <button id="save" class="saveButtonStyle">save</button>
         </div>
 
-        <!--<div class="inputs">-->
-        <!--<input id="title" class="inputTextStyle" placeholder="photo title">-->
-        <!--<input id="imageURL" class="inputTextStyle" placeholder="photo url">-->
-        <!--<br>-->
-        <!--<button id="addProductPhoto" class="saveButtonStyle">addProductPhoto</button>-->
-        <!--</div>-->
+        <div class="inputs">
+            <input id="title" class="inputTextStyle" placeholder="photo title">
+            <input id="imageURL" class="inputTextStyle" placeholder="photo url">
+            <br>
+            <button id="addProductPhoto" class="saveButtonStyle">addProductPhoto</button>
+        </div>
 
 
         <div class="backButton" id="backButton">&#x2190;</div>
@@ -43,96 +36,9 @@
 
         <script>
 
-            // document.getElementById('backButton').onclick = function () {
-            //     location.href = 'index.html';
-            // };
-            //
-            //
-            // let save = document.getElementById('save');
-            //
-            // let name = document.getElementById('name');
-            // let count = document.getElementById('count');
-            // let photo = document.getElementById('photo');
-            //
-            // let productsArray = [];
-            // save.onclick = function () {
-            //     let countValue = count.value;
-            //     let photoValue = photo.value;
-            //     let nameValue = name.value;
-            //
-            //     let d = new Date();
-            //
-            //     let product = {
-            //         id: '' + d.getFullYear() + d.getMonth() + d.getDay() + d.getHours() + d.getMinutes() + d.getSeconds() + d.getMilliseconds(),
-            //         name: nameValue,
-            //         count: countValue,
-            //         photo: photoValue
-            //
-            //     };
-            //
-            //     let productsFromStorage = localStorage.getItem('products');
-            //     console.log(productsFromStorage);
-            //     if (productsFromStorage) {
-            //         let parseArrayOfProducts = JSON.parse(productsFromStorage);
-            //         parseArrayOfProducts.push(product);
-            //         localStorage.setItem('products', JSON.stringify(parseArrayOfProducts));
-            //
-            //     } else {
-            //         console.log('ELSE');
-            //         let arr = [];
-            //         arr.push(product);
-            //         localStorage.setItem('products', JSON.stringify(arr))
-            //
-            //     }
-            //
-            //     console.log(productsFromStorage);
-            //
-            //
-            // };
-
-            /*12*/
-
-            // let save = document.getElementById('save');
-            //
-            // let name = document.getElementById('name');
-            // let count = document.getElementById('count');
-            // let photo = document.getElementById('photo');
-            //
-            //
-            // save.onclick = function () {
-            //     console.log('do');
-            //
-            //     console.log(name.value);
-            //     console.log(count.value);
-            //     console.log(photo.value);
-            //
-            //     let d = new Date();
-            //     let product = {
-            //         id: '' + d.getFullYear() + d.getMonth() + d.getDay() + d.getHours() + d.getMinutes() + d.getSeconds() + d.getMilliseconds(),
-            //         name: name.value,
-            //         count: count.value,
-            //         photo: photo.value
-            //     };
-            //
-            //
-            //     let products = localStorage.getItem('products');
-            //     if (products) {
-            //         console.log(products);
-            //         let parsedProducts = JSON.parse(products); // '[]'-> []
-            //         parsedProducts.push(product);
-            //         localStorage.setItem('products', JSON.stringify(parsedProducts));
-            //         console.log('if');
-            //
-            //     } else {
-            //         console.log(';else');
-            //         let arr = [];
-            //         arr.push(product);
-            //         localStorage.setItem('products', JSON.stringify(arr));
-            //
-            //
-            //     }
-            // }
-            /*14*/
+            document.getElementById('backButton').onclick = function () {
+                location.href = 'index.html';
+            };
 
 
             document.getElementById('save').onclick = function () {
@@ -172,6 +78,59 @@
                 }
 
             };
+
+
+            let addProductPhotoButton = document.getElementById("addProductPhoto");
+            addProductPhotoButton.onclick = function () {
+                let title = document.getElementById('title');
+                let imageURL = document.getElementById('imageURL');
+                let titleValue = title.value;
+                let imageValue = imageURL.value;
+                console.log(titleValue, imageValue);
+
+                // productsPhoto -> ls
+                let newProductPhoto = {
+                    title: titleValue,
+                    photoURL: imageValue
+                };
+
+                let productsPhoto = localStorage.getItem('productsPhoto');
+                if (productsPhoto) {
+                    let arr = JSON.parse(productsPhoto);
+                    arr.push(newProductPhoto);
+                    localStorage.setItem('productsPhoto', JSON.stringify(arr));
+                } else {
+                    let arr = [];
+                    arr.push(newProductPhoto);
+                    localStorage.setItem('productsPhoto', JSON.stringify(arr));
+
+                }
+
+                initView();
+
+
+            };
+
+
+            function initView() {
+                let productsPhoto2 = localStorage.getItem('productsPhoto');
+                if (productsPhoto2) {
+                    let select = document.getElementById('photo');
+                    select.innerHTML = '';
+                    let parsedProductsPhoto = JSON.parse(productsPhoto2);
+                    console.log(parsedProductsPhoto);
+                    for (const productPhoto of parsedProductsPhoto) {
+                        let option = document.createElement('option');
+                        option.innerText = productPhoto.title;
+                        option.setAttribute('value', productPhoto.photoURL);
+                        select.appendChild(option);
+
+                    }
+
+                }
+            }
+
+            initView();
 
 
         </script>
